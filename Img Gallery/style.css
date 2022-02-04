@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #eee;  
+}
+
+.imggallery {
+  width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.imggallery p {
+  font-family: sans-serif;
+  font-weight: 800;
+  letter-spacing: 7px;
+  margin: 20px;
+  font-size: 40px;
+  color: green;
+}
+#ani1 {
+  color: rgba(0,0,0,0.1);
+  background-image: linear-gradient(to right,red,green,blue);
+  background-clip: text;
+}
+#ani {
+  color: rgba(0,0,0,0.1);
+  background: red;
+  animation: gallery 4s ease-out infinite;
+  background-clip: text;
+  font-size: 30px;
+}
+
+@keyframes gallery {
+  0% {background: red;
+    background-clip: text;
+    font-size: 20px;}
+  25% {background: green;
+    background-clip: text;
+  font-size: 30px;}
+  50% {background: blue;
+    background-clip: text;}
+  75% {background: orange;
+    background-clip: text;
+    font-size: 40px;}
+  100% {background: red;
+    background-clip: text;
+    font-size: 20px;}
+
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+input {
+  display: none;
+}
+.gallery {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  justify-content: center;
+  object-fit: cover;
+  padding: 5px;
+  border-radius: 20px;
+  
+} 
+.gallery img {
+  width: 0px;
+  height: 100%;
+  border-radius: 20px;
+  transition: width 1.3s ease-out;
+}
+.thumbnail {
+  display: flex;
+  width: 80%;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+}
+.thumbnail::before {
+  content: "Click Me!";
+  writing-mode: vertical-lr;
+  color: gray;
+  margin-right: 0px;
+}
+.thumbnail label {
+   margin: 0 5px;
+   border: 3px solid gray;
+   border-radius: 10px;
+   width: 50px;
+   height: 50px;
+   overflow-y: hidden;
+   overflow-x: auto;
+   transform: rotate(45deg);
+
+}
+
+.thumbnail label:first-child {
+  margin-left: 15px;
+}
+
+#c1:checked + #i1 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#c2:checked + #i2 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#c3:checked + #i3 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#c4:checked + #i4 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#c5:checked + #i5 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#c6:checked + #i6 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#c7:checked + #i7 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#c8:checked + #i8 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#c9:checked + #i9 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#c10:checked + #i10 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/*------------responsive-----------*/
+
+@media  screen and (max-width:950px) {
+  .imggallery {
+    width: 100%;
+  }
+  .thumbnail label {
+    height: 40px;
+  }
+  p {
+    text-align: center;
+  }
+}
